@@ -26,12 +26,15 @@ $(document).ready(() => {
 
 		let competencia = $(e.target).val()
 
-
 		$.ajax({//@param1 método de req, @param2 url, @param3 dados ,@param4 oq acontece caso de suc. @param5 o que acontece caso de erro
 			type : 'GET',
 			url : 'app.php',//enviando parametros via get
 			data : `competencia=${competencia}`, //x-www fotm url encoded xx=x&y=y...
-			success : (dados) => {console.log(dados)},
+			dataType : 'json',
+			success : (dados) => {
+				$('#numeroVendas').html(dados.numeroVendas)
+				$('#totalVendas').html(dados.totalVendas)
+			},
 			error : (erro) => {console.log(erro)}
 		})
 	})

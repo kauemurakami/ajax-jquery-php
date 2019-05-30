@@ -113,7 +113,7 @@ $bd = new Bd($conexao, $dashboard);
 //setando valores
 $dashboard->__set('numeroVendas', $bd->getNumeroVendas());
 $dashboard->__set('totalVendas', $bd->getTotalVendas());
-print_r($dashboard);
-
+#print_r($dashboard);
+echo json_encode($dashboard);
 //print_r($ano . ' ' . $mes .' '. $dias_do_mes);
 ?>
